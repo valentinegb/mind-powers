@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.valentinegb.mindpowers.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
