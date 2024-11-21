@@ -18,23 +18,22 @@ public class MindPowers implements ModInitializer {
         LOGGER.info("Mind powers activated");
 
         PayloadTypeRegistry.playC2S().register(BlowUpPayload.ID, BlowUpPayload.CODEC);
-        ServerPlayConnectionEvents.INIT.register((handler, server) -> {
-            ServerPlayNetworking.registerReceiver(handler, BlowUpPayload.ID, (payload, context) -> {
-                context.player().server.execute(() -> {
-                    Vec3d pos = payload.targetedEntityId().isPresent()
-                            ? context.player().getWorld().getEntityById(payload.targetedEntityId().getAsInt()).getPos()
-                            : context.player().raycast(context.player().getViewDistance() * 16, 0, false).getPos();
+        ServerPlayConnectionEvents.INIT.register((handler, server) ->
+                ServerPlayNetworking.registerReceiver(handler, BlowUpPayload.ID, (payload, context) ->
+                        context.player().server.execute(() -> {
+                            Vec3d pos = payload.targetedEntityId().isPresent()
+                                    ? context.player().getWorld().getEntityById(payload.targetedEntityId().getAsInt()).getPos()
+                                    : context.player().raycast(context.player().getViewDistance() * 16, 0, false).getPos();
 
-                    context.player().getWorld().createExplosion(
-                            null,
-                            pos.x,
-                            pos.y,
-                            pos.z,
-                            4,
-                            World.ExplosionSourceType.BLOCK
-                    );
-                });
-            });
-        });
+                            context.player().getWorld().createExplosion(
+                                    null,
+                                    context.player().getWorld().getDamageSources().explosion(context.player(), context.player()),
+                                    null,
+                                    pos,
+                                    4,
+                                    false,
+                                    World.ExplosionSourceType.MOB
+                            );
+                        })));
     }
 }
