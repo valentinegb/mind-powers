@@ -1,41 +1,35 @@
 {
-	"schemaVersion": 1,
-	"id": "mind-powers",
-	"version": "${version}",
-	"name": "Mind Powers",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/mind-powers/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.valentinegb.mindpowers.MindPowers"
-		],
-		"client": [
-			"com.valentinegb.mindpowers.MindPowersClient"
-		]
-	},
-	"mixins": [
-		"mind-powers.mixins.json",
-		{
-			"config": "mind-powers.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21.3",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "mind-powers",
+  "version": "${version}",
+  "name": "Mind Powers",
+  "description": "Blows up pancakes with mind.",
+  "authors": [
+    "valentinegb"
+  ],
+  "license": "CC0-1.0",
+  "icon": "assets/mind-powers/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.valentinegb.mindpowers.MindPowers"
+    ],
+    "client": [
+      "com.valentinegb.mindpowers.MindPowersClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.21.3",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.buymeacoffee": "http://buymeacoffee.com/valentinegb",
+        "modmenu.mastodon": "https://hachyderm.io/@valentinegb"
+      }
+    }
+  }
 }
