@@ -4,6 +4,11 @@
   "version": "${version}",
   "name": "Mind Powers",
   "description": "Blows up pancakes with mind.",
+  "contact": {
+    "homepage": "https://modrinth.com/mod/mind-powers",
+    "issues": "https://github.com/valentinegb/mod-powers/issues",
+    "source": "https://github.com/valentinegb/mod-powers"
+  },
   "authors": [
     "valentinegb"
   ],
@@ -28,6 +33,7 @@
     "modmenu": {
       "links": {
         "modmenu.buymeacoffee": "http://buymeacoffee.com/valentinegb",
+        "modmenu.github_sponsors": "https://github.com/sponsors/valentinegb",
         "modmenu.mastodon": "https://hachyderm.io/@valentinegb"
       }
     }
