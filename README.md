@@ -1,7 +1,7 @@
 # Mind Powers
 
 A Minecraft mod that lets players blow up whatever (or whoeever) they're looking
-at.
+at with <kbd>B</kbd> (by default).
 
 > [!NOTE]
 > This is my first mod! It *is* very simple.
